@@ -1,4 +1,6 @@
-package root_package;
+package root_package.logic;
+
+import root_package.model.GameTable;
 
 public class DataDisplayer {
     public void displayMappingTable() {

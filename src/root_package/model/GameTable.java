@@ -1,4 +1,4 @@
-package root_package;
+package root_package.model;
 
 public class GameTable {
 }
