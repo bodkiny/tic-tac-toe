@@ -1,0 +1,17 @@
+# Maven
+target
+
+# Gradle
+.gradle
+**/build/
+!src/**/build/
+
+# InlelliJ IDEA
+.idea
+.idea_modules
+*.iml
+*.iws
+*.ipr
+*.eml
+.shelf
+out/
