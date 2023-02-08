@@ -10,13 +10,13 @@ public class Game {
     public final ComputerMove computerMove;
     public final UserMove userMove;
     public final WinnerVerifier winnerVerifier;
-    public final DrawVerifier drawVerifier;
+    public final GameTableInspector drawVerifier;
 
     public Game(DataDisplayer dataDisplayer,
                 ComputerMove computerMove,
                 UserMove userMove,
                 WinnerVerifier winnerVerifier,
-                DrawVerifier drawVerifier) {
+                GameTableInspector drawVerifier) {
         this.dataDisplayer = dataDisplayer;
         this.computerMove = computerMove;
         this.userMove = userMove;
@@ -42,7 +42,7 @@ public class Game {
                 System.out.println("YOU WIN");
                 break;
             }
-            if (drawVerifier.isDraw(gameTable)) {
+            if (drawVerifier.noCellIsEmpty(gameTable)) {
                 System.out.println("DRAW");
                 break;
             }
@@ -54,7 +54,7 @@ public class Game {
                 System.out.println("YOU LOST");
                 break;
             }
-            if (drawVerifier.isDraw(gameTable)) {
+            if (drawVerifier.noCellIsEmpty(gameTable)) {
                 System.out.println("DRAW");
                 break;
             }
