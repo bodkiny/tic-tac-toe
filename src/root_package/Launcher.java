@@ -1,12 +1,14 @@
 package root_package;
 
+import root_package.keypad.DesktopNumericKeypadCellNumberConverter;
 import root_package.logic.*;
 
 public class Launcher {
     public static void main(String[] args) {
-        Game game = new Game(new DataDisplayer(),
+        final CellNumberConverter cellNumberConverter = new DesktopNumericKeypadCellNumberConverter();
+        Game game = new Game(new DataDisplayer(cellNumberConverter),
                 new ComputerMove(),
-                new UserMove(),
+                new UserMove(cellNumberConverter),
                 new WinnerVerifier(),
                 new GameTableInspector());
 

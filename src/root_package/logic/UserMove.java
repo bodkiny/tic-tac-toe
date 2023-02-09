@@ -6,6 +6,13 @@ import root_package.model.GameTable;
 import java.util.Scanner;
 
 public class UserMove {
+
+    CellNumberConverter cellNumberConverter;
+
+    public UserMove(CellNumberConverter cellNumberConverter) {
+        this.cellNumberConverter = cellNumberConverter;
+    }
+
     public void make(GameTable gameTable) {
         while (true) {
             final Cell cell = getUserInput();
@@ -25,15 +32,7 @@ public class UserMove {
             if (userInput.length() == 1) {
                 final char ch = userInput.charAt(0);
                 if (ch >= '1' && ch <= '9') {
-                    int count = 9;
-                    for (int i = 0; i < 3; i++) {
-                        for (int j = 2; j >= 0; j--) {
-                            if (count == Integer.parseInt(userInput)) {
-                                return new Cell(i, j);
-                            }
-                            count--;
-                        }
-                    }
+                    return cellNumberConverter.toCell(ch);
                 }
             }
         }
