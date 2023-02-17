@@ -1,1 +1,1 @@
-# The ${project.name} Project
+# The "Tic Tac Toe" Project
